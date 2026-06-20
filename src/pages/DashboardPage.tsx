@@ -1,5 +1,5 @@
 import { LogOut, LocateFixed, Loader2, RadioTower } from 'lucide-react';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { AddressSearch } from '../components/AddressSearch';
 import { EldSection } from '../components/EldSection';
 import { RouteMap } from '../components/RouteMap';
@@ -70,6 +70,10 @@ export function DashboardPage() {
       setLoadingRoute(false);
     }
   }
+
+  useEffect(() => {
+    document.title = 'Dashboard';
+  }, []);
 
   return (
     <main className='min-h-screen' style={{ background: '#f7f7f5' }}>
